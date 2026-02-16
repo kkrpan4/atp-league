@@ -1,4 +1,5 @@
-mi<!DOCTYPE html>
+mi
+<!DOCTYPE html>
 <html lang="hr">
 
 <head>
@@ -6,7 +7,7 @@ mi<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATP World League | Službena ljestvica i rezultati</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;800&display=swap"
         rel="stylesheet">
@@ -24,16 +25,11 @@ mi<!DOCTYPE html>
                 <li><a href="#kontakt">Kontakt</a></li>
                 <li><a href="#izvori">Izvori</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
+
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Dobrodošli u ATP World League</h1>
@@ -45,7 +41,7 @@ mi<!DOCTYPE html>
             </div>
         </section>
 
-        <!-- Ranking Section -->
+
         <section id="ljestvica" class="section">
             <h2 class="section-title">Trenutna ATP Ljestvica</h2>
             <div class="search-container">
@@ -63,31 +59,31 @@ mi<!DOCTYPE html>
                         </tr>
                     </thead>
                     <tbody id="rankingBody">
-                        <!-- Podaci se pune putem JS-a -->
+                        <!-- //podaci se pune putem skripte -->
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Players Gallery Section -->
+
         <section id="igraci" class="section bg-light">
             <h2 class="section-title">Zvijezde Toura</h2>
             <div class="player-grid">
-                <!-- Kartice igrača se pune putem JS-a s alt oznakama -->
+                <!-- //podaci se pune putem skripte -->
             </div>
         </section>
 
-        <!-- Schedule Section -->
+
         <section id="raspored" class="section">
             <h2 class="section-title">Nadolazeći Turniri</h2>
             <ul id="scheduleList" class="schedule-list">
-                <!-- Lista turnira se pune putem JS-a -->
+                <!-- //podaci se pune putem skripte -->
             </ul>
         </section>
 
-        <!-- Kontakt Sekcija -->
+
         <section id="kontakt" class="section bg-light">
-            <h2 class="section-title">Kontaktirajte Nas</h2>
+            <h2 class="section-title"> Pretplati se na newsletter!</h2>
             <div class="contact-container">
                 <form id="contactForm">
                     <div class="form-group">
@@ -100,20 +96,15 @@ mi<!DOCTYPE html>
                         <input type="email" id="email" name="email" placeholder="vaš@email.com" required>
                         <small class="error-msg" id="emailError"></small>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Poruka</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Vaša poruka..." required></textarea>
-                        <small class="error-msg" id="messageError"></small>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Pošalji poruku</button>
+                    <button type="submit" class="btn btn-primary">Pretplati se</button>
                     <div id="formSuccess" class="success-msg" style="display:none;">
-                        Poruka je uspješno poslana! Hvala vam.
+                        Uspješno ste se pretplatili na naš newsletter! Hvala vam!
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- Sources Section -->
+
         <section id="izvori" class="section bg-dark text-white">
             <h2 class="section-title">Izvori</h2>
             <div class="sources-content">
@@ -138,12 +129,12 @@ mi<!DOCTYPE html>
     <footer>
         <div class="footer-content">
             <p>&copy; <span id="currentYear"></span> ATP World League Project</p>
-            <p>Autor: <strong>[Tvoje Ime i Prezime]</strong></p>
-            <p>Kolegij: ORWMA | Kontakt: <a href="mailto:student@primjer.hr">student@primjer.hr</a></p>
+            <p>Autor: <strong>Karlo Krpan</strong></p>
+            <p>Kolegij: ORWMA | Kontakt: <a href="mailto:kkrpan@etfos.hr">kkrpan@etfos.hr</a></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>

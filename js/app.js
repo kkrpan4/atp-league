@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Basic setup
+
     renderRankings(playersData);
-    renderPlayerGrid(playersData.slice(0, 3)); // Top 3 players
+    renderPlayerGrid(playersData.slice(0, 3));
     renderTournaments(tournamentsData);
-    
-    // Dynamic Year in Footer
+
+
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // Search functionality
+
     const searchInput = document.getElementById('playerSearch');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact Form Validation
+
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -33,41 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll to Top Logic
+
     const topBtn = document.getElementById('scrollToTopBtn');
-    window.onscroll = function() {
+    window.onscroll = function () {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             topBtn.style.display = "block";
         } else {
             topBtn.style.display = "none";
         }
-        highlightNav();
     };
 
-    if (topBtn) { // Ensure button exists before adding listener
+    if (topBtn) {
         topBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
-    // Simple scroll animation
-    const sections = document.querySelectorAll('.section, .hero');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(s => observer.observe(s));
 });
+
 
 function validateForm() {
     let isValid = true;
     const name = document.getElementById('name');
     const email = document.getElementById('email');
-    const message = document.getElementById('message');
 
     // Reset errors
     document.querySelectorAll('.error-msg').forEach(e => e.textContent = '');
@@ -85,36 +72,9 @@ function validateForm() {
         isValid = false;
     }
 
-    if (message && message.value.trim().length < 10) {
-        const messageError = document.getElementById('messageError');
-        if (messageError) messageError.textContent = 'Poruka mora imati barem 10 znakova.';
-        isValid = false;
-    }
-
     return isValid;
 }
 
-function highlightNav() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        // Adjust offset for better highlighting, e.g., 100px from top
-        if (window.pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        // Check if the href contains the current section ID
-        if (link.getAttribute('href') && link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
-    });
-}
 
 function renderRankings(data) {
     const tableBody = document.getElementById('rankingBody');
@@ -171,7 +131,7 @@ function renderTournaments(data) {
     });
 }
 
-// Table Sorting Logic
+
 let sortDirection = true;
 function sortTable(columnIndex) {
     const table = document.getElementById('rankingTable');
@@ -184,7 +144,7 @@ function sortTable(columnIndex) {
         let valA = a[key];
         let valB = b[key];
 
-        // Clean winRate for numeric comparison
+
         if (key === 'winRate') {
             valA = parseFloat(valA);
             valB = parseFloat(valB);
