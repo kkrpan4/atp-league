@@ -1,0 +1,151 @@
+mi<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATP World League | Službena ljestvica i rezultati</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">ATP <span>WORLD LEAGUE</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#ljestvica">Ljestvica</a></li>
+                <li><a href="#igraci">Igrači</a></li>
+                <li><a href="#raspored">Raspored</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#izvori">Izvori</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Dobrodošli u ATP World League</h1>
+                <p>Pratite najbolje tenisače svijeta, najnovije rezultate i nadolazeće turnire na jednom mjestu.</p>
+                <div class="hero-btns">
+                    <a href="#ljestvica" class="btn btn-primary">Pogledaj Ljestvicu</a>
+                    <a href="#raspored" class="btn btn-secondary">Raspored Turnira</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranking Section -->
+        <section id="ljestvica" class="section">
+            <h2 class="section-title">Trenutna ATP Ljestvica</h2>
+            <div class="search-container">
+                <input type="text" id="playerSearch" placeholder="Pretraži igrače...">
+            </div>
+            <div class="table-container">
+                <table id="rankingTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Rang <span class="sort-icon">&#10043;</span></th>
+                            <th onclick="sortTable(1)">Igrač <span class="sort-icon">&#10043;</span></th>
+                            <th onclick="sortTable(2)">Bodovi <span class="sort-icon">&#10043;</span></th>
+                            <th onclick="sortTable(3)">Turniri <span class="sort-icon">&#10043;</span></th>
+                            <th onclick="sortTable(4)">Win % <span class="sort-icon">&#10043;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingBody">
+                        <!-- Podaci se pune putem JS-a -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Players Gallery Section -->
+        <section id="igraci" class="section bg-light">
+            <h2 class="section-title">Zvijezde Toura</h2>
+            <div class="player-grid">
+                <!-- Kartice igrača se pune putem JS-a s alt oznakama -->
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="raspored" class="section">
+            <h2 class="section-title">Nadolazeći Turniri</h2>
+            <ul id="scheduleList" class="schedule-list">
+                <!-- Lista turnira se pune putem JS-a -->
+            </ul>
+        </section>
+
+        <!-- Kontakt Sekcija -->
+        <section id="kontakt" class="section bg-light">
+            <h2 class="section-title">Kontaktirajte Nas</h2>
+            <div class="contact-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" name="name" placeholder="Vaše ime..." required>
+                        <small class="error-msg" id="nameError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail adresa</label>
+                        <input type="email" id="email" name="email" placeholder="vaš@email.com" required>
+                        <small class="error-msg" id="emailError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Vaša poruka..." required></textarea>
+                        <small class="error-msg" id="messageError"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Pošalji poruku</button>
+                    <div id="formSuccess" class="success-msg" style="display:none;">
+                        Poruka je uspješno poslana! Hvala vam.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sources Section -->
+        <section id="izvori" class="section bg-dark text-white">
+            <h2 class="section-title">Izvori</h2>
+            <div class="sources-content">
+                <p>Ova stranica je izrađena u sklopu projektnog zadatka za kolegij ORWMA. Korišteni su sljedeći izvori:
+                </p>
+                <ul>
+                    <li><a href="https://www.atptour.com/" target="_blank">ATP Tour Official Website</a> - Podaci o
+                        igračima i ljestvici</li>
+                    <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a> - Tipografija (Roboto i
+                        Montserrat)</li>
+                    <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> - HTML5/CSS3/JS
+                        dokumentacija</li>
+                    <li><a href="https://unsplash.com/" target="_blank">Unsplash</a> - Slike za galeriju i hero sekciju
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" title="Vrati se na vrh">&#8593;</button>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> ATP World League Project</p>
+            <p>Autor: <strong>[Tvoje Ime i Prezime]</strong></p>
+            <p>Kolegij: ORWMA | Kontakt: <a href="mailto:student@primjer.hr">student@primjer.hr</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
