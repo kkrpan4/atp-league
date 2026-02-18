@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPlayerGrid(playersData.slice(0, 3));
     renderTournaments(tournamentsData);
 
-
+    //trenutna godina
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-
+    //pretraga igrača u tablici
     const searchInput = document.getElementById('playerSearch');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderRankings(filtered);
         });
     }
-
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    //scroll to top gumb
     const topBtn = document.getElementById('scrollToTopBtn');
     window.onscroll = function () {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -56,7 +55,7 @@ function validateForm() {
     const name = document.getElementById('name');
     const email = document.getElementById('email');
 
-    // Reset errors
+
     document.querySelectorAll('.error-msg').forEach(e => e.textContent = '');
 
     if (name && name.value.trim().length < 3) {

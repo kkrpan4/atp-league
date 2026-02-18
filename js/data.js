@@ -1,6 +1,6 @@
 const playersData = [
     { rank: 1, name: "Jannik Sinner", points: 11830, tournaments: 17, winRate: "92%", image: "https://cdn.britannica.com/78/258978-050-842D1878/jannik-sinner-of-italy-smiles-after-bnp-paribas-open-semi-final-2024.jpg" },
-    { rank: 2, name: "Alexander Zverev", points: 7915, tournaments: 21, winRate: "78%", image: "https://e0.365dm.com/17/10/2048x1152/skysports-alexander-zverev-tennis-china-open_4118672.jpg?20171003182058" },
+    { rank: 2, name: "Ivan Hlišić", points: 7676, tournaments: 21, winRate: "78%", image: "images/hlija.jpeg" },
     { rank: 3, name: "Carlos Alcaraz", points: 7010, tournaments: 16, winRate: "81%", image: "https://r.testifier.nl/Acbs8526SDKI/resizing_type:fit/watermark:IMAGO%20%2F%20ABACAPRESS/width:3840/height:2560/plain/https://s3-newsifier.ams3.digitaloceanspaces.com/tennisinfinitycom/images/2025-01/alcaraz-carlos-australianopen25-imagoabacapress7-679208779537e.jpg@webp" },
     { rank: 4, name: "Taylor Fritz", points: 5100, tournaments: 22, winRate: "72%", image: "" },
     { rank: 5, name: "Daniil Medvedev", points: 5030, tournaments: 18, winRate: "70%", image: "" },
